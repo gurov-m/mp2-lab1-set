@@ -204,20 +204,22 @@ int TBitField::operator!=(const TBitField &bf) const // сравнение
 
 TBitField TBitField::operator|(const TBitField &bf) // операция "или"
 {
+	TBitField t(bf.BitLen);
 	for (int i = 0; i < this->MemLen; i++)
 	{
-		this->pMem[i] = this->pMem[i] | bf.pMem[i];
+		t.pMem[i] = this->pMem[i] | bf.pMem[i];
 	}
-	return *this;
+	return t;
 }
 
 TBitField TBitField::operator&(const TBitField &bf) // операция "и"
 {
+	TBitField t(bf.BitLen);
 	for (int i = 0; i < this->MemLen; i++)
 	{
-		this->pMem[i] = this->pMem[i] & bf.pMem[i];
+		t.pMem[i] = this->pMem[i] & bf.pMem[i];
 	}
-	return *this;
+	return t;
 }
 
 TBitField TBitField::operator~(void) // отрицание
