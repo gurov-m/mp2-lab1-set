@@ -155,7 +155,7 @@ TEST(TBitField, or_operator_applied_to_bitfields_of_equal_size)
 {
   const int size = 4;
   TBitField bf1(size), bf2(size), expBf(size);
-  // bf1 = 0011
+  // bf1 = 0110
   bf1.SetBit(2);
   bf1.SetBit(3);
   // bf2 = 0101
@@ -309,3 +309,4 @@ TEST(TBitField, bitfields_with_different_bits_are_not_equal)
 
   EXPECT_NE(bf1, bf2);
 }
+
